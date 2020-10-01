@@ -41,6 +41,13 @@ export default function PepperCard({ pepper }) {
           <Typography variant="body2" color="textSecondary" component="p">
             Scoville: {pepper.scoville}
           </Typography>
+          {pepper.nada ? (
+            <Typography gutterBottom variant="p" component="h4">
+              Shared By: {pepper.nada}
+            </Typography>
+          ) : (
+            <></>
+          )}
         </CardContent>
       </CardActionArea>
       <CardActions>

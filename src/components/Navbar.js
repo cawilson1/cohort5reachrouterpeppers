@@ -14,14 +14,17 @@ export default function Navbar({ setSignedIn, signedIn }) {
     >
       <Link to="/">Home</Link> <Link to="/allpeppers">All Peppers</Link>{" "}
       {signedIn ? (
-        <Button
-          onClick={() => {
-            window.localStorage.setItem("jwt", "");
-            setSignedIn(undefined);
-          }}
-        >
-          Sign Out
-        </Button>
+        <>
+          <Link to="/sharedpeppers">Peppers Shared With Me</Link>
+          <Button
+            onClick={() => {
+              window.localStorage.setItem("jwt", "");
+              setSignedIn(undefined);
+            }}
+          >
+            Sign Out
+          </Button>
+        </>
       ) : (
         <Link to="/signin">Sign In</Link>
       )}

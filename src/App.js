@@ -16,7 +16,7 @@ function App() {
       <Navbar setSignedIn={setSignedIn} signedIn={signedIn} />
       {signedIn ? "You are signed in" : ""}
       {signedIn ? (
-        <PrivateRoutes />
+        <PrivateRoutes signedIn={signedIn} />
       ) : (
         <PublicRoutes setSignedIn={setSignedIn} />
       )}
