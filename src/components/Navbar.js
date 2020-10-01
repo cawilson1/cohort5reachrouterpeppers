@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "@reach/router";
+import { Button } from "@material-ui/core";
 
-export default function Navbar() {
+export default function Navbar({ setSignedIn, signedIn }) {
   return (
     <nav
       style={{
@@ -12,7 +13,18 @@ export default function Navbar() {
       }}
     >
       <Link to="/">Home</Link> <Link to="/allpeppers">All Peppers</Link>{" "}
-      <Link to="/signin">Sign In</Link>
+      {signedIn ? (
+        <Button
+          onClick={() => {
+            window.localStorage.setItem("jwt", "");
+            setSignedIn(undefined);
+          }}
+        >
+          Sign Out
+        </Button>
+      ) : (
+        <Link to="/signin">Sign In</Link>
+      )}
     </nav>
   );
 }

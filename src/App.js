@@ -11,8 +11,9 @@ function App() {
   console.log(signedIn);
   return (
     <div>
-      <Navbar />
-      <PublicRoutes />
+      <Navbar setSignedIn={setSignedIn} signedIn={signedIn} />
+      {signedIn ? "You are signed in" : ""}
+      <PublicRoutes setSignedIn={setSignedIn} />
     </div>
   );
 }

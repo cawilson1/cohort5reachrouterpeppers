@@ -5,13 +5,13 @@ import AllPeppers from "../Pages/AllPeppers";
 import SignIn from "../Pages/SignIn";
 import NotFound from "../Pages/NotFound";
 
-export default function PublicRoutes() {
+export default function PublicRoutes({ setSignedIn }) {
   return (
     <Router>
       <NotFound default />
       <Home path="/" />
       <AllPeppers path="/allpeppers" />
-      <SignIn path="/signin" />
+      <SignIn path="/signin" setSignedIn={setSignedIn} />
     </Router>
   );
 }

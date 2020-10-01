@@ -61,7 +61,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function SignInSide() {
+export default function SignInSide({ setSignedIn }) {
   const classes = useStyles();
 
   return (
@@ -90,6 +90,7 @@ export default function SignInSide() {
                 .then(resp => {
                   if (resp.data.message === "successfully authenticated") {
                     window.localStorage.setItem("jwt", resp.data.jwt);
+                    setSignedIn(resp.data.jwt);
                     navigate("/");
                   }
                 })
