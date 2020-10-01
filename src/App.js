@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PublicRoutes from "./components/PublicRoutes";
+import PrivateRoutes from "./components/PrivateRoutes";
+
 import Navbar from "./components/Navbar";
 function App() {
   const [signedIn, setSignedIn] = useState(undefined);
@@ -13,7 +15,11 @@ function App() {
     <div>
       <Navbar setSignedIn={setSignedIn} signedIn={signedIn} />
       {signedIn ? "You are signed in" : ""}
-      <PublicRoutes setSignedIn={setSignedIn} />
+      {signedIn ? (
+        <PrivateRoutes />
+      ) : (
+        <PublicRoutes setSignedIn={setSignedIn} />
+      )}
     </div>
   );
 }
