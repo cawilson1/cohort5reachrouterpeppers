@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "@reach/router";
+import { Link, navigate } from "@reach/router";
 import { Button } from "@material-ui/core";
 
 export default function Navbar({ setSignedIn, signedIn }) {
@@ -19,15 +19,18 @@ export default function Navbar({ setSignedIn, signedIn }) {
           <Link to="/sharedpeppers">Peppers Shared With Me</Link>
           <Button
             onClick={() => {
-              window.localStorage.setItem("jwt", "");
               setSignedIn(undefined);
+              window.localStorage.setItem("jwt", "");
+              navigate("/signin");
             }}
           >
             Sign Out
           </Button>
         </>
       ) : (
-        <Link to="/signin">Sign In</Link>
+        <>
+          <Link to="/signin">Sign In</Link>
+        </>
       )}
     </nav>
   );
