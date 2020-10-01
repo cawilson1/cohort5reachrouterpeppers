@@ -1,7 +1,12 @@
 import React from "react";
+import PublicRoutes from "./components/PublicRoutes";
 
 function App() {
-  return <div>This is an app</div>;
+  return (
+    <div>
+      <PublicRoutes />
+    </div>
+  );
 }
 
 export default App;
