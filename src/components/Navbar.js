@@ -26,6 +26,16 @@ export default function Navbar({ setSignedIn, signedIn }) {
           >
             Sign Out
           </Button>
+          {/* <Link to="/signin" style={{ textDecoration: "none" }}>
+            <Button
+              onClick={() => {
+                setSignedIn(undefined);
+                window.localStorage.setItem("jwt", "");
+              }}
+            >
+              Sign Out
+            </Button>
+          </Link> */}
         </>
       ) : (
         <>
