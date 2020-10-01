@@ -15,6 +15,7 @@ export default function Navbar({ setSignedIn, signedIn }) {
       <Link to="/">Home</Link> <Link to="/allpeppers">All Peppers</Link>{" "}
       {signedIn ? (
         <>
+          <Link to="/mypeppers">My Peppers</Link>
           <Link to="/sharedpeppers">Peppers Shared With Me</Link>
           <Button
             onClick={() => {
